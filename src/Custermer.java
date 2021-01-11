@@ -1,8 +1,29 @@
+import java.util.Date;
+
 public class Custermer {
     private String id;
     private String name;
+    private String customtype;//乘客类型
+    private Date birth;//
     private String phone;
     private String cardid;
+
+
+    public String getCustomtype() {
+        return customtype;
+    }
+
+    public void setCustomtype(String customtype) {
+        this.customtype = customtype;
+    }
+
+    public Date getBirth() {
+        return birth;
+    }
+
+    public void setBirth(Date birth) {
+        this.birth = birth;
+    }
 
     public String getId() {
         return id;
