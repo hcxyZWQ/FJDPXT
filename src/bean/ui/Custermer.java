@@ -1,3 +1,5 @@
+package bean.ui;
+
 import java.util.Date;
 
 public class Custermer {

@@ -1,3 +1,5 @@
+package bean.ui;
+
 public class Ordertiket {
     private String id;
     private float JPJG;//及票价格
