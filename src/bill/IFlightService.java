@@ -12,4 +12,5 @@ public interface IFlightService {
     IFlightDao getFlightStartair(String startair);//获取出发地
     IFlightDao getFlightEndAir(String endair);//获取到达地
     void updateFlight(IFlightDao Flight);//更新航班信息
+
 }
