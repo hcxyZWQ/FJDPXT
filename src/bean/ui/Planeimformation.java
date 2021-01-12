@@ -1,16 +1,28 @@
 package bean.ui;
 
+import sun.dc.pr.PRError;
+
 import java.util.Date;
 
 public class Planeimformation {
     private String id;
+    private String airid;
     private String airtype;//机型
     private String startair;//出发机场
     private String endair;//到达机场
     private String starttime;//出发时间
-    private String seatNo;//座位号
     private String totalSeatNum;//座位总数
     private String endtime;//到达时间
+
+    public Planeimformation(String airid, String airtype, String startair, String endair, String starttime, String totalSeatNum) {
+        this.airid = airid;
+        this.airtype = airtype;
+        this.startair = startair;
+        this.endair = endair;
+        this.starttime = starttime;
+        this.totalSeatNum = totalSeatNum;
+
+    }
 
     public String getId() {
         return id;
@@ -60,13 +72,6 @@ public class Planeimformation {
         this.endtime = endtime;
     }
 
-    public String getSeatNo() {
-        return seatNo;
-    }
-
-    public void setSeatNo(String seatNo) {
-        this.seatNo = seatNo;
-    }
 
     public String getTotalSeatNum() {
         return totalSeatNum;
@@ -74,5 +79,18 @@ public class Planeimformation {
 
     public void setTotalSeatNum(String totalSeatNum) {
         this.totalSeatNum = totalSeatNum;
+    }
+
+    @Override
+    public String toString() {
+        return "Planeimformation{" +
+                "id='" + id + '\'' +
+                ", airid='" + airid + '\'' +
+                ", airtype='" + airtype + '\'' +
+                ", startair='" + startair + '\'' +
+                ", endair='" + endair + '\'' +
+                ", starttime='" + starttime + '\'' +
+                ", totalSeatNum='" + totalSeatNum + '\''+
+                '}';
     }
 }

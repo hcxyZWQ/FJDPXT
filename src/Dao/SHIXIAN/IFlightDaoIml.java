@@ -1,10 +1,14 @@
-package Dao;
+package Dao.SHIXIAN;
+
+import Dao.IFlightDao;
+import bean.ui.Planeimformation;
 
 import java.util.Set;
 
 public class IFlightDaoIml implements IFlightDao {
+
     @Override
-    public void insertFlight(IFlightDao flight) {
+    public void insertFlight(Planeimformation planeimformation) {
 
     }
 

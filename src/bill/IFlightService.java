@@ -1,10 +1,11 @@
-package Dao;
+package bill;
 
+import Dao.IFlightDao;
 import bean.ui.Planeimformation;
 
 import java.util.Set;
 
-public interface IFlightDao {
+public interface IFlightService {
     void insertFlight(Planeimformation planeimformation);//航班信息的录入
     Set<IFlightDao> getAllFlight();//获取所有的航班信息
     IFlightDao getFlightStartTime(String startTime);//获取出发时间
