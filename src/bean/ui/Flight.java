@@ -1,20 +1,17 @@
 package bean.ui;
 
-import sun.dc.pr.PRError;
-
-import java.util.Date;
-
-public class Planeimformation {
+public class Flight {
     private String id;
     private String airid;
     private String airtype;//机型
     private String startair;//出发机场
     private String endair;//到达机场
     private String starttime;//出发时间
-    private String totalSeatNum;//座位总数
+    private int totalSeatNum;//座位总数
     private String endtime;//到达时间
 
-    public Planeimformation(String airid, String airtype, String startair, String endair, String starttime, String totalSeatNum) {
+    public Flight(String id, String airid, String airtype, int totalSeatNum, String startair, String endair, String starttime) {
+        this.id=id;
         this.airid = airid;
         this.airtype = airtype;
         this.startair = startair;
@@ -22,6 +19,14 @@ public class Planeimformation {
         this.starttime = starttime;
         this.totalSeatNum = totalSeatNum;
 
+    }
+
+    public String getAirid() {
+        return airid;
+    }
+
+    public void setAirid(String airid) {
+        this.airid = airid;
     }
 
     public String getId() {
@@ -73,11 +78,11 @@ public class Planeimformation {
     }
 
 
-    public String getTotalSeatNum() {
+    public int getTotalSeatNum() {
         return totalSeatNum;
     }
 
-    public void setTotalSeatNum(String totalSeatNum) {
+    public void setTotalSeatNum(int totalSeatNum) {
         this.totalSeatNum = totalSeatNum;
     }
 
