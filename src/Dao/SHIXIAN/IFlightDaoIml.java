@@ -1,20 +1,59 @@
 package Dao.SHIXIAN;
 
 import Dao.IFlightDao;
-import bean.ui.Planeimformation;
+import bean.ui.Flight;
 
+import java.sql.*;
+import java.util.HashSet;
 import java.util.Set;
 
 public class IFlightDaoIml implements IFlightDao {
 
     @Override
-    public void insertFlight(Planeimformation planeimformation) {
+    public void insertFlight(Flight flight) throws SQLException {
+        String url= "jdbc:oracle:thin:@localhost:1521:orcl";
+        String username="opts";
+        String password="opts1234";
+        Connection conn= DriverManager.getConnection(url,username,password);
+        String sql="INSERT INTO flight VALUES(?,?,?,?,?,?,?)";
 
+        PreparedStatement pstmt=conn.prepareStatement(sql);
+        pstmt.setString(1,flight.getId());
+        pstmt.setString(2,flight.getAirid());
+        pstmt.setString(3,flight.getAirtype());
+        pstmt.setInt(4,flight.getTotalSeatNum());
+        pstmt.setString(5,flight.getStartair());
+        pstmt.setString(6,flight.getEndair());
+        pstmt.setString(7,flight.getStarttime());
+
+
+        pstmt.executeUpdate();
     }
 
     @Override
-    public Set<IFlightDao> getAllFlight() {
-        return null;
+    public Set<Flight> getAllFlight() throws SQLException {
+        Set<Flight> allFlight=new HashSet<Flight>();
+        String url= "jdbc:oracle:thin:@localhost:1521:orcl";
+        String username="opts";
+        String password="opts1234";
+        Connection conn= DriverManager.getConnection(url,username,password);
+        String sql="SELECT * FROM flight";
+
+        PreparedStatement pstmt=conn.prepareStatement(sql);
+        ResultSet re=pstmt.executeQuery();
+        while (re.next())
+        {
+            String id=re.getString("ID");
+            String airid=re.getString("FLIGHT_ID");
+            String airtype=re.getString("PLANE_TYPE");
+            int totalSeatNum=re.getInt("TOTAL_SEATS_NUM");
+            String startair=re.getString("DEPARTURE_AIRPORT");
+            String endair=re.getString("DESTINATION_AIRPORT");
+            String starttime=re.getString("DEPARTURE_TIME");
+            Flight flight = new Flight(id, airid, airtype, totalSeatNum, starttime, endair, starttime);
+            allFlight.add(flight);
+        }
+        return allFlight;
     }
 
     @Override
