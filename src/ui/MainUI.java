@@ -78,8 +78,8 @@ public class MainUI {
             {
                 IFlightService iFlightService=new FloghtServiceImpl();
                 try {
-                    Set<Flight> allFlights=iFlightService.getAllFlight();
-                    for (Flight flight:allFlights)
+                    Set<Flight> allFlight=iFlightService.getAllFlight();
+                    for (Flight flight:allFlight)
                     {
                         System.out.println(flight);
                     }

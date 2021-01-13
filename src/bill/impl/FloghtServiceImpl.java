@@ -14,13 +14,12 @@ public class FloghtServiceImpl implements IFlightService {
 
     public FloghtServiceImpl()
     {
-        iFlightDao = new IFlightDaoIml();
+        iFlightDao=new IFlightDaoIml();
     }
 
     @Override
-    public void insertFlight(Flight planeimformation) throws SQLException {
-
-        iFlightDao.insertFlight(planeimformation);
+    public void insertFlight(Flight flight) throws SQLException {
+        iFlightDao.insertFlight(flight);
 
     }
 
